@@ -1,11 +1,11 @@
 <script >
-import HelloWorld from './components/HelloWorld.vue'
+import AppHeader from './components/AppHeader.vue'
 import { store } from './store.js'
 import axios from 'axios'
 
 export default{
   components:{
-    HelloWorld
+    AppHeader,
   },
   data(){
     return{
@@ -18,9 +18,8 @@ export default{
   methods:{
      call(){
       axios.get("http://127.0.0.1:8000/api/prova").then(risultato=>{
-      console.log(risultato);
-      store.dati=risultato;
-      
+        store.dati=risultato.data;
+        console.log(store.dati);
     })
     },
     
@@ -30,7 +29,7 @@ export default{
 </script>
 
 <template>
-  <HelloWorld/>
+  <router-view></router-view>
 </template>
 
 <style scoped>
