@@ -27,9 +27,6 @@ export default{
   <h1>il mio sito vue</h1>
   <div class="cruent">
 
-<!--     <router-link :to="{ name: menuItems.About  }" class="nav-link">
-        {{ "caio" }}
-    </router-link> -->
 
     <li v-for="(item, index) in menuItems" :key="index">
         <router-link :to="{ name: item.routeName }" class="nav-link">
@@ -39,7 +36,7 @@ export default{
 
   </div>
   <ul >
-    <li v-for="$dato in store.dati">{{$dato}}</li>
+    <li v-for="$dato in store.dati">{{$dato.name}}</li>
   </ul>
 
 </template>
